@@ -1,0 +1,26 @@
+# ==============================================================================
+# HTTP SECURITY HEADERS CONFIGURATION (Netlify / Cloudflare Pages / Static Hosts)
+# ==============================================================================
+
+/*
+  # Enforce HTTPS with HTTP Strict Transport Security
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Prevent MIME-type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Prevent clickjacking / iframe embedding
+  X-Frame-Options: SAMEORIGIN
+
+  # Control Referrer Information
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict browser feature permissions (Geolocation, Camera, Microphone)
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+  # Cross-Origin Security
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # Content Security Policy (Allows self assets & Google Fonts)
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:;
