@@ -3,7 +3,7 @@
 **Owner / Profile:** David Ogbogu  
 **Email:** davidogbogu2005@gmail.com  
 **Location:** Enugu State, Nigeria (Available for Global Remote Opportunities)  
-**Last Updated:** August 23, 2026  
+**Last Updated:** August 24, 2026  
 **Security Status:** 🛡️ Grade A+ (Production-Ready)  
 
 ---
@@ -25,6 +25,7 @@ The website combines:
 ```
 Website-demo-1/
 ├── index.html                   # Core semantic HTML5 structure, SEO tags, ARIA accessibility, & section layouts
+├── server.js                    # Zero-dependency local Node.js static HTTP development server
 ├── README.md                    # Project run guide and technology summary
 ├── ARCHITECTURE.md              # Living architecture, functionality & progress tracker (this document)
 ├── SECURITY_AUDIT.md            # Full security & compliance audit report
@@ -62,6 +63,7 @@ Website-demo-1/
 | **Styling** | Vanilla CSS3 (Custom Tokens) | CSS custom properties for instant light/dark theme switching, Flexbox, responsive CSS Grid, glassmorphism (`backdrop-filter: blur()`), and fluid typography. |
 | **Typography** | Google Fonts | Primary Heading: `Outfit` (800/900 weight), Body Sans: `Plus Jakarta Sans`, Monospace: `JetBrains Mono`. Preconnected with CORS. |
 | **Interactive Logic** | Vanilla JavaScript (ES6+ Modular) | Hardware-accelerated 2D Canvas engine (`requestAnimationFrame`), IntersectionObserver API for scroll animations, state-driven filtering, and modal focus management. Zero bloated dependencies. |
+| **Local Dev Server** | Node.js `http` Module (`server.js`) | Lightweight, zero-dependency static HTTP server with full MIME-type routing and security path normalization. |
 | **Security & Headers** | CSP & Modern HTTP Headers | Strict HSTS, X-Content-Type-Options `nosniff`, X-Frame-Options `SAMEORIGIN`, Referrer-Policy, Honeypot bot protection, and sanitized DOM insertion. |
 | **Assets** | Web-optimized JPEGs / SVGs | High-resolution light-mode interfaces and portrait photos with zero broken links. |
 
@@ -180,6 +182,7 @@ graph TD
 | **2026-08-23** | `v1.2.0` | Rebranded owner identity to **David Ogbogu**, generated and replaced 4 project mockups with high-contrast **light mode UI images**, updated direct contact to **`davidogbogu2005@gmail.com`**, updated location to **`Enugu State, Nigeria`**, and redesigned the footer to a professional 3-part layout. |
 | **2026-08-23** | `v1.3.0` | Established living `ARCHITECTURE.md` documentation and automated agent rule to continuously track all codebase, architecture, and feature changes. |
 | **2026-08-23** | `v1.4.0` | Completed full security & compliance audit (`SECURITY_AUDIT.md`), created `_headers` and `vercel.json` production security header configurations, hardened DOM insertion against XSS in `showToast()`, added honeypot bot defense and field validation constraints. |
+| **2026-08-24** | `v1.5.0` | Created zero-dependency Node.js HTTP development server (`server.js`) with full MIME routing and launched local live instance at `http://localhost:3000`. |
 
 ---
 
