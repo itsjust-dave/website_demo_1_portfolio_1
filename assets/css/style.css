@@ -1153,19 +1153,21 @@ body {
 }
 
 .cta-heading {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 900;
-  letter-spacing: -1px;
+  font-size: clamp(22px, 4.2vw, 52px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  word-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-primary);
-  max-width: 800px;
-  line-height: 1.1;
+  max-width: 100%;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .cta-subtext {
   font-size: 16px;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 620px;
   line-height: 1.6;
 }
 
@@ -1672,7 +1674,10 @@ body {
   }
 
   .cta-heading {
-    font-size: clamp(26px, 7.5vw, 36px);
+    font-size: clamp(17px, 5vw, 30px);
+    letter-spacing: 0.02em;
+    word-spacing: 0.06em;
+    white-space: nowrap;
   }
 
   .cta-subtext {
