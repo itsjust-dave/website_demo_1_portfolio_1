@@ -240,6 +240,57 @@ body {
   justify-content: space-between;
   padding: 24px 36px;
   border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating Glassmorphic Pill on Scroll */
+.site-header.is-scrolled {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1040px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideDownNav 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] .site-header.is-scrolled {
+  background: rgba(18, 18, 24, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 42px -6px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideDownNav {
+  0% {
+    transform: translate(-50%, -24px) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.site-header.is-scrolled .status-badge {
+  padding: 6px 14px;
+  font-size: 12px;
+}
+
+.site-header.is-scrolled .nav-links {
+  gap: 22px;
+}
+
+.site-header.is-scrolled .btn {
+  padding: 8px 18px;
+  font-size: 13px;
 }
 
 @media (max-width: 900px) {
@@ -247,6 +298,12 @@ body {
     padding: 18px 20px;
     flex-wrap: wrap;
     gap: 16px;
+  }
+  
+  .site-header.is-scrolled {
+    width: calc(100% - 24px);
+    padding: 8px 16px;
+    top: 12px;
   }
 }
 
@@ -300,10 +357,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  position: relative;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
 }
 
 .nav-count {

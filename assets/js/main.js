@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initThemeSwitcher();
+  initStickyNavbar();
   initPortfolioFilters();
   initServicesAccordion();
   initExperiencePreview();
@@ -276,3 +277,49 @@ function initContactModal() {
     });
   }
 }
+
+/* ============================================================
+   7. STICKY FLOATING NAVBAR & SCROLLSPY
+============================================================ */
+function initStickyNavbar() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const SCROLL_THRESHOLD = 80;
+
+  function updateNavbar() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  // Scrollspy active indicator
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let currentId = '';
+    const scrollPos = window.scrollY + 220;
+
+    sections.forEach((sec) => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('active');
+      }
+    });
+  }, { passive: true });
+}
+
