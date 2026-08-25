@@ -105,12 +105,68 @@
           </div>
         </button>
 
-        <button class="btn btn-primary" data-open-contact>
+        <button class="btn btn-primary header-cta-btn" data-open-contact>
           <span>Let's Collaborate</span>
           <span class="btn-arrow">↗</span>
         </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+      <div class="mobile-drawer-content">
+        <div class="mobile-drawer-header">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Available for New Project</span>
+          </div>
+          <button id="mobile-drawer-close" class="modal-close-btn" aria-label="Close navigation menu">✕</button>
+        </div>
+
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="#work" class="mobile-nav-link"><span>Work</span> <span class="nav-count">[40]</span></a></li>
+            <li><a href="#services" class="mobile-nav-link"><span>Service</span> <span class="nav-count">[4]</span></a></li>
+            <li><a href="#experience" class="mobile-nav-link"><span>Experience</span> <span class="nav-count">[9y+]</span></a></li>
+            <li><a href="#contact" class="mobile-nav-link"><span>Contact</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-drawer-footer">
+          <button class="btn btn-primary" data-open-contact style="width: 100%; padding: 14px;">
+            <span>Let's Collaborate</span>
+            <span class="btn-arrow">↗</span>
+          </button>
+          
+          <div class="mobile-social-bar">
+            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">🌐</span>
+              <span>Dribbble</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">📷</span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">🎨</span>
+              <span>Behance</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">

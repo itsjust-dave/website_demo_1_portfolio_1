@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initThemeSwitcher();
   initStickyNavbar();
+  initMobileDrawer();
   initPortfolioFilters();
   initServicesAccordion();
   initExperiencePreview();
@@ -322,4 +323,50 @@ function initStickyNavbar() {
     });
   }, { passive: true });
 }
+
+/* ============================================================
+   8. MOBILE NAVIGATION DRAWER
+============================================================ */
+function initMobileDrawer() {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const closeBtn = document.getElementById('mobile-drawer-close');
+  const overlay = document.getElementById('mobile-drawer-overlay');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', openDrawer);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeDrawer);
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+}
+
 
