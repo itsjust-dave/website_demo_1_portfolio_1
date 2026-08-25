@@ -1,1137 +1,480 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>David Ogbogu | Senior Data Analyst & Digital Product Designer</title>
-  <meta name="description" content="Portfolio of David Ogbogu — Senior Data Analyst, Analytics Engineer & Web/App Product Designer specializing in quantitative modeling, BI visualization, and data-driven product design.">
-  <meta name="keywords" content="David Ogbogu, Data Analyst, Product Designer, UI/UX Designer, Analytics Engineer, Python, SQL, Tableau, Figma, React, Machine Learning, Data Visualization">
-  <meta name="author" content="David Ogbogu">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>David Ogbogu | Webdesigner & Digital Product Designer</title>
+  <meta name="description" content="David Ogbogu - Webdesigner. Designing Websites that make you want to come back again. Exploring modern UI/UX design, web design, and interaction experiences." />
+  <meta name="keywords" content="David Ogbogu, Webdesigner, UI designer, UX designer, Product Designer, Portfolio, Web Design" />
+  <meta name="author" content="David Ogbogu" />
+  <meta name="robots" content="index, follow" />
+  <meta name="color-scheme" content="light dark" />
   
   <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="David Ogbogu | Senior Data Analyst & Product Designer">
-  <meta property="og:description" content="Transforming complex multi-dimensional data into actionable intelligence and intuitive digital products.">
-  <meta property="og:image" content="assets/images/designer-portrait.jpg">
-
-  <!-- Favicon / Icons -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300e5ff'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>">
-
-  <!-- Preconnect External Resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="David Ogbogu | Webdesigner & Digital Product Designer" />
+  <meta property="og:description" content="Designing Websites that make you want to come back again." />
+  <meta property="og:image" content="assets/images/david_portrait.jpg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "David Ogbogu",
+    "jobTitle": "Webdesigner",
+    "description": "Designing Websites that make you want to come back again.",
+    "sameAs": [
+      "https://dribbble.com",
+      "https://instagram.com",
+      "https://linkedin.com",
+      "https://behance.net"
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Ambient Glowing Background Atmosphere -->
-  <div class="ambient-glow-bg" aria-hidden="true">
-    <div class="ambient-orb ambient-orb-1"></div>
-    <div class="ambient-orb ambient-orb-2"></div>
-    <div class="ambient-orb ambient-orb-3"></div>
+  <!-- Ambient Cloud Overlay -->
+  <div class="atmospheric-bg" aria-hidden="true"></div>
+
+  <!-- Preloader Screen -->
+  <div id="mask" aria-hidden="true">
+    <div class="preloader-wrap" id="preloader-text"></div>
+    <div class="preloader-sub" id="preloader-sub">
+      Webdesigner
+      <br />
+      Designing Websites that make you want to come back again
+    </div>
   </div>
 
-  <!-- =========================================================================
-       1. FLOATING PILL NAVIGATION BAR
-       ========================================================================= -->
-  <header class="site-header" id="site-header">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand" aria-label="David Ogbogu Portfolio Home">
-        <div class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-          </svg>
-        </div>
-        <span class="brand-text">David<span>Ogbogu</span></span>
-      </a>
+  <!-- Floating Preview for Experience section -->
+  <div id="floating-preview" class="floating-preview" aria-hidden="true">
+    <img id="floating-preview-img" src="assets/images/service-phones.jpg" alt="Preview" />
+  </div>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="nav-menu" aria-label="Primary Navigation">
-        <a href="#hero" class="nav-link active">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#data-projects" class="nav-link">Data Projects</a>
-        <a href="#app-projects" class="nav-link">App Projects</a>
-        <a href="#design-projects" class="nav-link">Design</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
+  <!-- Site Container -->
+  <div class="site-wrapper">
+    
+    <!-- Top Header & Navigation -->
+    <header class="site-header">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Available for New Project</span>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">Work <span class="nav-count">[40]</span></a></li>
+          <li><a href="#services" class="nav-link">Service <span class="nav-count">[4]</span></a></li>
+          <li><a href="#experience" class="nav-link">Experience <span class="nav-count">[9y+]</span></a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
 
-      <!-- Actions & Theme Toggle -->
-      <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme">
-          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
+      <div class="header-actions">
+        <!-- Animated Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <div class="toggle-track">
+            <!-- Sun Icon -->
+            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon -->
+            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <div class="toggle-thumb"></div>
+          </div>
         </button>
 
-        <a href="#contact" class="btn btn-primary btn-sm">
-          <span>Let's Talk</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+        <button class="btn btn-primary" data-open-contact>
+          <span>Let's Collaborate</span>
+          <span class="btn-arrow">↗</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Massive Hero Headline -->
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">
+          <span class="hero-first-name">DAVID</span>
+          <span class="hero-last-name">OGBOGU</span>
+        </h1>
+      </div>
+
+      <!-- Center Portrait Cutout -->
+      <div class="hero-portrait-container">
+        <img src="assets/images/david_hero_blended.png" alt="David Ogbogu" class="hero-portrait" />
+      </div>
+
+      <!-- Bottom Hero Content Split -->
+      <div class="hero-content-grid">
+        <div class="hero-left-box">
+          <h2 class="hero-role">Webdesigner</h2>
+          <p class="hero-tagline">Designing Websites that make you want to come back again.</p>
+          <button class="btn btn-primary" data-open-contact>
+            <span>Let's collaborate</span>
+            <span class="btn-arrow">↗</span>
+          </button>
+        </div>
+
+        <ul class="hero-social-list">
+          <li>
+            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">🌐</span>
+              <span>Dribbble</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">📷</span>
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <span class="social-icon">🎨</span>
+              <span>Behance</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Selected Work / Portfolio Section -->
+    <section class="section" id="work">
+      <div class="watermark-title" aria-hidden="true">PORTFOLIO</div>
+      
+      <div class="section-header-row">
+        <h2 class="section-heading">
+          <span class="section-heading-slash">/</span>SELECTED WORK
+        </h2>
+
+        <ul class="filter-tabs">
+          <li><button class="filter-tab-btn active" data-filter="all">All</button></li>
+          <li><button class="filter-tab-btn" data-filter="real-project">Real Project</button></li>
+          <li><button class="filter-tab-btn" data-filter="exploration">Exploration</button></li>
+        </ul>
+
+        <a href="#work" class="btn btn-secondary">
+          <span>View All Work</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card" data-category="real-project">
+          <div class="project-image-wrap">
+            <span class="project-badge-overlay">Real Project</span>
+            <img src="assets/images/project-bloomcare.jpg" alt="BloomCare - Mental Health App Landing Page" class="project-img" loading="lazy" />
+            <div class="project-hover-arrow">↗</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">BloomCare - Mental Health App Landing Page</h3>
+            <div class="project-tags">
+              <span class="tag-pill">Landing Page</span>
+              <span class="tag-pill">Kumpin Studio</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="real-project">
+          <div class="project-image-wrap">
+            <span class="project-badge-overlay">Real Project</span>
+            <img src="assets/images/project-fragwater.jpg" alt="FragWater - Luxury Fragrance Landing Page" class="project-img" loading="lazy" />
+            <div class="project-hover-arrow">↗</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">FragWater - Luxury Fragrance Landing Page</h3>
+            <div class="project-tags">
+              <span class="tag-pill">Landing Page</span>
+              <span class="tag-pill">Kumpin Studio</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="exploration">
+          <div class="project-image-wrap">
+            <span class="project-badge-overlay">Exploration</span>
+            <img src="assets/images/project-cryptocalm.jpg" alt="CryptoCalm - Crypto Dashboard & App" class="project-img" loading="lazy" />
+            <div class="project-hover-arrow">↗</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">CryptoCalm - Crypto Dashboard & Analytics</h3>
+            <div class="project-tags">
+              <span class="tag-pill">SaaS Platform</span>
+              <span class="tag-pill">Fintech UI</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-category="exploration">
+          <div class="project-image-wrap">
+            <span class="project-badge-overlay">Exploration</span>
+            <img src="assets/images/project-zenpay.jpg" alt="ZenPay - NextGen Mobile Banking" class="project-img" loading="lazy" />
+            <div class="project-hover-arrow">↗</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">ZenPay - NextGen Mobile Banking & App</h3>
+            <div class="project-tags">
+              <span class="tag-pill">Mobile Design</span>
+              <span class="tag-pill">Banking UI</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="section-header-row">
+        <h2 class="section-heading">
+          <span class="section-heading-slash">/</span>SERVICE
+        </h2>
+      </div>
+
+      <div class="services-container">
+        <!-- Service 1 (Expanded by default) -->
+        <div class="service-item active">
+          <div class="service-header">
+            <h3 class="service-title">UIUX DESIGN</h3>
+            <span class="service-icon">↗</span>
+          </div>
+          <div class="service-body">
+            <div class="service-content-split">
+              <p class="service-desc">
+                Designing clear and scalable interfaces for dashboards, mobile apps, and websites that captivate users and elevate brand conversion.
+              </p>
+              <div class="service-preview-img-wrap">
+                <img src="assets/images/service-phones.jpg" alt="UIUX Design Preview" class="service-preview-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-title">WEB DESIGN & DEV</h3>
+            <span class="service-icon">↗</span>
+          </div>
+          <div class="service-body">
+            <div class="service-content-split">
+              <p class="service-desc">
+                Building responsive, high-performance, and bespoke website experiences tailored to modern startups and visionaries.
+              </p>
+              <div class="service-preview-img-wrap">
+                <img src="assets/images/project-fragwater.jpg" alt="Web Design Preview" class="service-preview-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-title">BRANDING</h3>
+            <span class="service-icon">↗</span>
+          </div>
+          <div class="service-body">
+            <div class="service-content-split">
+              <p class="service-desc">
+                Crafting iconic brand identities, typography guidelines, and design systems that stand out in crowded digital markets.
+              </p>
+              <div class="service-preview-img-wrap">
+                <img src="assets/images/project-bloomcare.jpg" alt="Branding Preview" class="service-preview-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-title">MOTIONS & ANIMATIONS</h3>
+            <span class="service-icon">↗</span>
+          </div>
+          <div class="service-body">
+            <div class="service-content-split">
+              <p class="service-desc">
+                Engaging micro-interactions, smooth scroll physics, and animated visual storytelling that makes products feel alive.
+              </p>
+              <div class="service-preview-img-wrap">
+                <img src="assets/images/project-cryptocalm.jpg" alt="Motion Preview" class="service-preview-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="watermark-title" aria-hidden="true">EXPERIENCE</div>
+
+      <div class="section-header-row">
+        <h2 class="section-heading">
+          <span class="section-heading-slash">/</span>EXPERIENCE
+        </h2>
+        <span class="tag-pill" style="font-weight: 500; font-size: 13px;">9+ years of experience</span>
+      </div>
+
+      <div class="experience-list">
+        <!-- Row 1 -->
+        <div class="experience-row" data-preview="assets/images/service-phones.jpg">
+          <span class="exp-company">Kumpin Studio</span>
+          <span class="exp-role">UI/UX & Product Designer</span>
+          <span class="exp-date">Nov 2025 - Now</span>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="experience-row" data-preview="assets/images/project-bloomcare.jpg">
+          <span class="exp-company">Mikan Team</span>
+          <span class="exp-role">Creative Director</span>
+          <span class="exp-date">Aug 2025 - Now</span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="experience-row" data-preview="assets/images/project-cryptocalm.jpg">
+          <span class="exp-company">Microsoft</span>
+          <span class="exp-role">Interaction Designer</span>
+          <span class="exp-date">Jan 2022 - Aug 2025</span>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="experience-row" data-preview="assets/images/project-zenpay.jpg">
+          <span class="exp-company">Facebook</span>
+          <span class="exp-role">Visual Designer</span>
+          <span class="exp-date">Mar 2019 - Dec 2021</span>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="experience-row" data-preview="assets/images/project-fragwater.jpg">
+          <span class="exp-company">Apple</span>
+          <span class="exp-role">Experience Designer</span>
+          <span class="exp-date">Feb 2017 - Feb 2019</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA & Footer Section -->
+    <footer class="cta-section" id="contact">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Available for New Project</span>
+      </div>
+
+      <h2 class="cta-heading">HAVE A PROJECT IN MIND?</h2>
+
+      <p class="cta-subtext">
+        Together, we can create something clear and impactful. Let's collaborate to bring our ideas to life in a way that resonates with everyone.
+      </p>
+
+      <button class="btn btn-primary" data-open-contact style="padding: 14px 36px; font-size: 16px;">
+        <span>Contact Me</span>
+        <span class="btn-arrow">↗</span>
+      </button>
+
+      <!-- Bottom Social Bar -->
+      <div class="footer-social-bar">
+        <a href="#hero" class="avatar-pill">
+          <img src="assets/images/david_portrait.jpg" alt="David Ogbogu" class="avatar-pill-img" />
+          <span>David Ogbogu</span>
         </a>
 
-        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle Mobile Navigation" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
+        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+          <span class="social-icon">🌐</span>
+          <span>Dribbble</span>
+        </a>
+
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+          <span class="social-icon">📷</span>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+          <span class="social-icon">💼</span>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-pill">
+          <span class="social-icon">🎨</span>
+          <span>Behance</span>
+        </a>
+      </div>
+
+      <p class="footer-copyright">
+        © 2026 David Ogbogu. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Contact Modal -->
+  <div id="contact-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Let's Collaborate</h3>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Your Name</label>
+          <input class="form-input" type="text" id="contact-name" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Your Email</label>
+          <input class="form-input" type="email" id="contact-email" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Project Details</label>
+          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 8px;">
+          <span>Send Message</span>
+          <span class="btn-arrow">↗</span>
         </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
-      <a href="#hero" class="mobile-nav-link">About</a>
-      <a href="#experience" class="mobile-nav-link">Experience</a>
-      <a href="#data-projects" class="mobile-nav-link">Data Projects</a>
-      <a href="#app-projects" class="mobile-nav-link">App Projects</a>
-      <a href="#design-projects" class="mobile-nav-link">Design</a>
-      <a href="#skills" class="mobile-nav-link">Skills</a>
-      <a href="#contact" class="mobile-nav-link">Contact</a>
-    </div>
-  </header>
-
-  <!-- =========================================================================
-       2. HERO SECTION
-       ========================================================================= -->
-  <section class="section hero-section" id="hero">
-    <div class="container">
-      <div class="hero-grid">
-        
-        <!-- Left: Headline & Bio -->
-        <div class="hero-content reveal-on-scroll is-revealed">
-          <div class="hero-status-badge">
-            <span class="status-dot"></span>
-            <span>Available for Senior Analytics & Product Roles</span>
-          </div>
-
-          <h1 class="hero-title">
-            Data Analyst <br>
-            <span class="gradient-text">& Digital Product Designer</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            Hi, I’m <strong>David Ogbogu</strong>. I specialize in turning complex multi-dimensional data into predictive intelligence and high-impact digital experiences. Primarily a quantitative analyst, I build machine learning survival models, streaming BI telemetry dashboards, and modern web/mobile applications.
-          </p>
-
-          <div class="hero-specialty-tags">
-            <span class="specialty-pill highlight">📊 Predictive Modeling & SQL</span>
-            <span class="specialty-pill highlight">🔬 Cohort Survival & Attribution</span>
-            <span class="specialty-pill">🎨 Figma Design Systems</span>
-            <span class="specialty-pill">⚡ Full-Stack React Apps</span>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#data-projects" class="btn btn-primary">
-              <span>Explore Data Case Studies</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-
-            <a href="#app-projects" class="btn btn-secondary">
-              <span>View App & Design Work</span>
-            </a>
-
-            <button class="btn btn-secondary download-cv-btn" aria-label="Download Resume CV PDF">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>Download CV</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Right: Dedicated User Portrait with Ambient Badges -->
-        <div class="hero-image-wrapper reveal-on-scroll is-revealed stagger-2">
-          <div class="hero-portrait-frame">
-            <div class="hero-portrait-inner">
-              <img 
-                src="assets/images/designer-portrait.jpg" 
-                alt="David Ogbogu - Senior Data Analyst and Digital Product Designer" 
-                class="hero-portrait-img" 
-                width="420" 
-                height="420" 
-                loading="eager"
-              >
-            </div>
-
-            <!-- Floating Badges -->
-            <div class="floating-metric-badge badge-top-left">
-              <div class="metric-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 20V10M12 20V4M6 20v-6"></path>
-                </svg>
-              </div>
-              <div class="metric-text">
-                <span class="metric-value">99.4%</span>
-                <span class="metric-label">Model Precision</span>
-              </div>
-            </div>
-
-            <div class="floating-metric-badge badge-bottom-right">
-              <div class="metric-icon emerald">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-              <div class="metric-text">
-                <span class="metric-value">8+ Years</span>
-                <span class="metric-label">BI & UX Leadership</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Hero Impact Stats Strip -->
-      <div class="hero-stats-strip reveal-on-scroll is-revealed stagger-3">
-        <div class="stat-item">
-          <div class="stat-number-row">
-            <span class="stat-number" data-target="14.2">0</span>
-            <span class="stat-suffix">M+</span>
-          </div>
-          <span class="stat-label">Direct Revenue Impact Unlocked</span>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-number-row">
-            <span class="stat-number" data-target="65">0</span>
-            <span class="stat-suffix">+</span>
-          </div>
-          <span class="stat-label">Production BI Dashboards & Models</span>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-number-row">
-            <span class="stat-number" data-target="45">0</span>
-            <span class="stat-suffix">M+</span>
-          </div>
-          <span class="stat-label">Daily Telemetry Records Processed</span>
-        </div>
-
-        <div class="stat-item">
-          <div class="stat-number-row">
-            <span class="stat-number" data-target="34">0</span>
-            <span class="stat-suffix">%</span>
-          </div>
-          <span class="stat-label">Avg. Funnel Conversion Uplift</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       3. INFINITE MARQUEE RIBBON (ALEXFOLIO SIGNATURE)
-       ========================================================================= -->
-  <div class="marquee-ribbon" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-item"><span class="marquee-dot"></span> Predictive ML Modeling</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Snowflake & dbt Pipelines</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Time-Series Telemetry</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Interactive Canvas Visualizations</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Figma Design Systems</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Full-Stack React Apps</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Multi-Touch Attribution</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Stochastic Monte Carlo</div>
-      <!-- Duplicate for infinite seamless scroll -->
-      <div class="marquee-item"><span class="marquee-dot"></span> Predictive ML Modeling</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Snowflake & dbt Pipelines</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Time-Series Telemetry</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Interactive Canvas Visualizations</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Figma Design Systems</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Full-Stack React Apps</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Multi-Touch Attribution</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Stochastic Monte Carlo</div>
+      </form>
     </div>
   </div>
 
-  <!-- =========================================================================
-       4. WORK EXPERIENCE SECTION
-       ========================================================================= -->
-  <section class="section" id="experience">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag">Career Roadmap</span>
-        <h2 class="section-title">Work Experience</h2>
-        <p class="section-subtitle">A chronological track of driving quantitative impact and shipping scalable product interfaces across high-growth startups and enterprise data teams.</p>
-      </div>
-
-      <!-- Role Category Filter Tabs -->
-      <div class="filter-tabs reveal-on-scroll">
-        <button class="filter-tab-btn exp-filter-btn active" data-filter="all">All Roles</button>
-        <button class="filter-tab-btn exp-filter-btn" data-filter="data">Data & BI Roles</button>
-        <button class="filter-tab-btn exp-filter-btn" data-filter="design">Product & UX Roles</button>
-      </div>
-
-      <!-- Chronological Timeline Container -->
-      <div class="timeline-container">
-        <div class="timeline-track" aria-hidden="true"></div>
-        <div id="timeline-items-container">
-          <!-- Dynamic Timeline Items rendered via experience.js -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       5. DATA ANALYSIS PROJECTS SECTION (PRIMARY FOCUS & MOVING CHARTS)
-       ========================================================================= -->
-  <section class="section" id="data-projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-    <div class="container">
-      
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag emerald">Primary Core Focus</span>
-        <h2 class="section-title">Data Analysis Projects & Case Studies</h2>
-        <p class="section-subtitle">Deep quantitative modeling, statistical customer survival curves, attribution engines, and live moving telemetry dashboards translating raw data into millions in business value.</p>
-      </div>
-
-      <!-- Primary Specialization Callout Banner -->
-      <div class="primary-focus-banner reveal-on-scroll">
-        <div class="focus-banner-left">
-          <div class="focus-badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <line x1="18" y1="20" x2="18" y2="10"></line>
-              <line x1="12" y1="20" x2="12" y2="4"></line>
-              <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-          </div>
-          <div class="focus-banner-text">
-            <h4>Primary Domain Specialization: Quantitative Analytics & Predictive Insights</h4>
-            <p>From complex SQL feature engineering and Snowflake modeling to Scikit-Learn survival estimators and executive dashboards.</p>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-outline-cyan btn-sm">Request Analytics Consultation</a>
-      </div>
-
-      <!-- Continuous Moving Analytics Live Sandbox -->
-      <div class="interactive-data-hub reveal-on-scroll">
-        <div class="data-hub-header">
-          <div class="hub-title-group">
-            <h3>Live Streaming Analytics Sandbox</h3>
-            <span class="live-indicator">
-              <span class="status-dot"></span>
-              Live Moving Waveforms (60fps)
-            </span>
-          </div>
-
-          <div class="hub-tabs">
-            <button class="hub-tab-btn active" data-view="churn">Predictive Churn & LTV</button>
-            <button class="hub-tab-btn" data-view="attribution">Multi-Touch Attribution</button>
-            <button class="hub-tab-btn" data-view="telemetry">Live Anomaly Stream</button>
-          </div>
-        </div>
-
-        <div class="data-hub-body">
-          <!-- Canvas Viewport -->
-          <div class="chart-viewport-wrapper">
-            <div class="chart-canvas-container">
-              <canvas id="hub-canvas"></canvas>
-            </div>
-          </div>
-
-          <!-- Controls Subpanel 1: Churn Model -->
-          <div id="controls-churn" class="chart-controls-panel hub-controls-subpanel">
-            <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.25rem;">Live Simulation Parameters</h4>
-            
-            <div class="control-group">
-              <div class="control-label-row">
-                <span>Baseline Retention</span>
-                <span id="val-retention" class="control-value">70%</span>
-              </div>
-              <input type="range" id="slider-retention" class="range-slider" min="40" max="95" value="70">
-            </div>
-
-            <div class="control-group">
-              <div class="control-label-row">
-                <span>ML Feature Adoption Lift</span>
-                <span id="val-adoption" class="control-value">+15%</span>
-              </div>
-              <input type="range" id="slider-adoption" class="range-slider" min="0" max="30" value="15">
-            </div>
-
-            <div class="simulation-results-box">
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Simulated User LTV:</span>
-                <span id="sim-ltv-val" class="sim-result-val">$766</span>
-              </div>
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Net Annual Savings:</span>
-                <span id="sim-rev-val" class="sim-result-val">+$546,000/yr</span>
-              </div>
-            </div>
-
-            <button class="btn btn-outline-cyan btn-sm" data-project-id="data-1">
-              <span>Inspect Full Churn Model</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-
-          <!-- Controls Subpanel 2: Attribution -->
-          <div id="controls-attribution" class="chart-controls-panel hub-controls-subpanel" style="display: none;">
-            <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.25rem;">Attribution Methodology</h4>
-            
-            <div class="control-group">
-              <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Select Algorithmic Model:</span>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <button class="attr-model-pill type-pill-btn active" data-model="shapley">Shapley Game-Theory (Data-Driven)</button>
-                <button class="attr-model-pill type-pill-btn" data-model="timeDecay">7-Day Time Decay</button>
-                <button class="attr-model-pill type-pill-btn" data-model="linear">Linear Multi-Touch</button>
-                <button class="attr-model-pill type-pill-btn" data-model="first">First-Touch Acquisition</button>
-              </div>
-            </div>
-
-            <div class="simulation-results-box">
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Allocated Ad Budget:</span>
-                <span class="sim-result-val">$50,000/mo</span>
-              </div>
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Attribution Accuracy:</span>
-                <span class="sim-result-val">97.8%</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls Subpanel 3: Telemetry Stream -->
-          <div id="controls-telemetry" class="chart-controls-panel hub-controls-subpanel" style="display: none;">
-            <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 0.25rem;">Streaming Oscilloscope</h4>
-            
-            <div class="control-group">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Live Hospital Influx Stream</span>
-              <div id="telemetry-status-badge" style="padding: 0.4rem 0.8rem; background: var(--bg-secondary); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--border-radius-sm); color: var(--accent-emerald); font-family: var(--font-mono); font-size: 0.825rem;">
-                ● Stream Active (Nominal)
-              </div>
-            </div>
-
-            <div class="simulation-results-box">
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Sampling Rate:</span>
-                <span class="sim-result-val">60 FPS Live</span>
-              </div>
-              <div class="sim-result-row">
-                <span style="color: var(--text-muted);">Anomaly Threshold:</span>
-                <span class="sim-result-val">85% Surge</span>
-              </div>
-            </div>
-
-            <button class="btn btn-outline-cyan btn-sm" data-project-id="data-2">
-              <span>Inspect Healthcare Case Study</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Featured Data Case Study Cards Grid -->
-      <div class="grid-2">
-        
-        <!-- Data Case Study 1 (Light Mode Mockup) -->
-        <article class="project-card reveal-on-scroll">
-          <div class="project-thumbnail-wrapper">
-            <img src="assets/images/data-dashboard.jpg" alt="Predictive Churn Engine & Dynamic Retention Dashboard" class="project-thumbnail" loading="lazy">
-            <span class="project-category-badge">Machine Learning & BI</span>
-            <button class="project-arrow-btn" data-project-id="data-1" aria-label="Open Case Study">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </button>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Predictive Churn Engine & Retention Dashboard</h3>
-            <p class="project-description">End-to-end XGBoost survival modeling on Snowflake event warehouses, scoring at-risk accounts 60 days ahead to preserve enterprise revenue.</p>
-            
-            <div class="project-metrics-grid">
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">$3.2M</span>
-                <span class="metric-kpi-lbl">ARR Preserved</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">38.4%</span>
-                <span class="metric-kpi-lbl">Churn Reduction</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">0.94</span>
-                <span class="metric-kpi-lbl">AUC-ROC Precision</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">1.2M</span>
-                <span class="metric-kpi-lbl">Daily Inferences</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">Snowflake</span>
-                <span class="tech-tag">Tableau</span>
-              </div>
-              <button class="btn btn-primary btn-sm" data-project-id="data-1">
-                <span>Case Study</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Data Case Study 2 (Light Mode Mockup) -->
-        <article class="project-card reveal-on-scroll stagger-2">
-          <div class="project-thumbnail-wrapper">
-            <img src="assets/images/data-healthcare.jpg" alt="Healthcare Patient Flow & Emergency Room Telemetry" class="project-thumbnail" loading="lazy">
-            <span class="project-category-badge">Time-Series & Telemetry</span>
-            <button class="project-arrow-btn" data-project-id="data-2" aria-label="Open Case Study">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </button>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Healthcare Patient Flow & Capacity Forecasting</h3>
-            <p class="project-description">Stochastic Monte Carlo simulation and live hospital bed occupancy telemetry suite preventing triage bottlenecks across 3 regional medical centers.</p>
-            
-            <div class="project-metrics-grid">
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">-42 min</span>
-                <span class="metric-kpi-lbl">ER Wait Time Delta</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">96.2%</span>
-                <span class="metric-kpi-lbl">Bed Allocation Acc.</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">250K+</span>
-                <span class="metric-kpi-lbl">Patients Served</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">4.5 hrs</span>
-                <span class="metric-kpi-lbl">Surge Early Warning</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tech-tag">Python (Scipy)</span>
-                <span class="tech-tag">Monte Carlo</span>
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">PostgreSQL</span>
-              </div>
-              <button class="btn btn-primary btn-sm" data-project-id="data-2">
-                <span>Case Study</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       6. APP PROJECTS SECTION
-       ========================================================================= -->
-  <section class="section" id="app-projects">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag">Applications & Engineering</span>
-        <h2 class="section-title">App Projects</h2>
-        <p class="section-subtitle">Full-stack web and mobile applications blending rich statistical engines with responsive, modern user experiences.</p>
-      </div>
-
-      <div class="grid-2">
-        
-        <!-- App Project 1 (Light Mode Mockup) -->
-        <article class="project-card reveal-on-scroll">
-          <div class="project-thumbnail-wrapper">
-            <img src="assets/images/app-finpulse.jpg" alt="FinPulse: AI Wealth Manager & Cashflow App" class="project-thumbnail" loading="lazy">
-            <span class="project-category-badge" style="color: var(--accent-emerald);">Fintech Application</span>
-            <button class="project-arrow-btn" data-project-id="app-1" aria-label="Open App Case Study">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </button>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">FinPulse: AI Wealth Intelligence & Cashflow Cockpit</h3>
-            <p class="project-description">Personal finance mobile and web application featuring automated bank sync, forward-looking liquidity simulations, and custom interactive SVG charts.</p>
-            
-            <ul class="app-feature-list">
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Automated transaction categorization with NLP heuristics</span>
-              </li>
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>12-Month forward net worth Monte Carlo forecasting</span>
-              </li>
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Client-side AES-256 zero-knowledge security</span>
-              </li>
-            </ul>
-
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tech-tag">React Native</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Chart.js</span>
-                <span class="tech-tag">Node.js</span>
-              </div>
-              <button class="btn btn-secondary btn-sm" data-project-id="app-1">
-                <span>View Architecture</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- App Project 2 (Light Mode Mockup) -->
-        <article class="project-card reveal-on-scroll stagger-2">
-          <div class="project-thumbnail-wrapper">
-            <img src="assets/images/app-omni.jpg" alt="OmniMetrics: Real-Time SaaS Telemetry & Funnel Engine" class="project-thumbnail" loading="lazy">
-            <span class="project-category-badge" style="color: var(--accent-indigo);">SaaS Telemetry Engine</span>
-            <button class="project-arrow-btn" data-project-id="app-2" aria-label="Open App Case Study">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </button>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">OmniMetrics: Real-Time SaaS Telemetry Engine</h3>
-            <p class="project-description">Sub-second latency analytics web platform for product and growth engineering teams to monitor active user sessions, funnel drops, and distributed API latency.</p>
-            
-            <ul class="app-feature-list">
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>High-throughput WebSockets streaming 10,000 evt/sec</span>
-              </li>
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Interactive conversion funnel builder with real-time math</span>
-              </li>
-              <li class="app-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>60fps hardware-accelerated Canvas charts</span>
-              </li>
-            </ul>
-
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">WebSockets</span>
-                <span class="tech-tag">Canvas API</span>
-                <span class="tech-tag">Redis</span>
-              </div>
-              <button class="btn btn-secondary btn-sm" data-project-id="app-2">
-                <span>View Architecture</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       7. DESIGN PROJECTS SECTION
-       ========================================================================= -->
-  <section class="section" id="design-projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag violet">Product Design & Systems</span>
-        <h2 class="section-title">Design Projects</h2>
-        <p class="section-subtitle">Design systems, atomic component libraries, and data-dense UI/UX architectures optimized for clarity, cognitive efficiency, and accessibility.</p>
-      </div>
-
-      <div style="max-width: 980px; margin: 0 auto;">
-        <article class="project-card reveal-on-scroll">
-          <div class="project-thumbnail-wrapper">
-            <img src="assets/images/design-nexus.jpg" alt="Nexus Design System: Enterprise Data Visualization UI Kit" class="project-thumbnail" loading="lazy">
-            <span class="project-category-badge" style="color: var(--accent-violet);">Design System & UI/UX</span>
-            <button class="project-arrow-btn" data-project-id="design-1" aria-label="Open Design Case Study">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </button>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Nexus Design System: Enterprise Data Visualization Kit</h3>
-            <p class="project-description">A comprehensive multi-brand Figma library and token specification crafted specifically for data-intensive enterprise software, high-density analytics tables, and real-time operations dashboards.</p>
-            
-            <div class="project-metrics-grid" style="grid-template-columns: repeat(4, 1fr);">
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">140+</span>
-                <span class="metric-kpi-lbl">Atomic Components</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">100%</span>
-                <span class="metric-kpi-lbl">WCAG AA Compliant</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">380+</span>
-                <span class="metric-kpi-lbl">Design Tokens</span>
-              </div>
-              <div class="project-metric-item">
-                <span class="metric-kpi-val">24</span>
-                <span class="metric-kpi-lbl">Shipped Applications</span>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="tech-tag">Figma Tokens</span>
-                <span class="tech-tag">Data Visualization Tokens</span>
-                <span class="tech-tag">Accessibility (a11y)</span>
-                <span class="tech-tag">Style Dictionary</span>
-              </div>
-              <button class="btn btn-primary btn-sm" data-project-id="design-1">
-                <span>View Design Case Study</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       8. SKILLS & TOOLING MATRIX
-       ========================================================================= -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag">Core Competencies</span>
-        <h2 class="section-title">Technical Skills & Tooling</h2>
-        <p class="section-subtitle">Bridging data engineering rigor, predictive machine learning modeling, and modern front-end design.</p>
-      </div>
-
-      <div class="skills-grid">
-        
-        <!-- Skill Group 1: Data Analytics & Modeling -->
-        <div class="skill-category-card reveal-on-scroll">
-          <div class="skill-card-header">
-            <div class="skill-icon-circle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg>
-            </div>
-            <h3>Data & Analytics (Primary)</h3>
-          </div>
-
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>SQL & Snowflake / BigQuery</span>
-                <span class="skill-level-text">98%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="98%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Python (Pandas, NumPy, Scikit)</span>
-                <span class="skill-level-text">95%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="95%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Tableau & Power BI Architecture</span>
-                <span class="skill-level-text">92%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="92%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Cohort Modeling & Attribution</span>
-                <span class="skill-level-text">94%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="94%"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-tags-cloud">
-            <span class="tech-tag">dbt Core</span>
-            <span class="tech-tag">A/B Testing</span>
-            <span class="tech-tag">Survival Models</span>
-            <span class="tech-tag">PostgreSQL</span>
-          </div>
-        </div>
-
-        <!-- Skill Group 2: Product & UI/UX Design -->
-        <div class="skill-category-card reveal-on-scroll stagger-2">
-          <div class="skill-card-header">
-            <div class="skill-icon-circle emerald">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-              </svg>
-            </div>
-            <h3>UI/UX & Product Design</h3>
-          </div>
-
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Figma & Design Systems</span>
-                <span class="skill-level-text">94%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="94%" style="background: var(--grad-emerald);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Information Architecture</span>
-                <span class="skill-level-text">90%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="90%" style="background: var(--grad-emerald);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Data Viz UI Design & Tokens</span>
-                <span class="skill-level-text">96%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="96%" style="background: var(--grad-emerald);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Usability Testing & Research</span>
-                <span class="skill-level-text">88%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="88%" style="background: var(--grad-emerald);"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-tags-cloud">
-            <span class="tech-tag">WCAG 2.1 AA</span>
-            <span class="tech-tag">Wireframing</span>
-            <span class="tech-tag">Prototyping</span>
-            <span class="tech-tag">Color Systems</span>
-          </div>
-        </div>
-
-        <!-- Skill Group 3: App Development -->
-        <div class="skill-category-card reveal-on-scroll stagger-3">
-          <div class="skill-card-header">
-            <div class="skill-icon-circle violet">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3>App Development & Frontend</h3>
-          </div>
-
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>JavaScript (ES6+) & TypeScript</span>
-                <span class="skill-level-text">92%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="92%" style="background: var(--grad-sunset);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>React & Next.js Ecosystem</span>
-                <span class="skill-level-text">89%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="89%" style="background: var(--grad-sunset);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>Canvas API & Interactive SVG</span>
-                <span class="skill-level-text">91%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="91%" style="background: var(--grad-sunset);"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name-row">
-                <span>REST APIs & Node.js</span>
-                <span class="skill-level-text">86%</span>
-              </div>
-              <div class="skill-progress-bar">
-                <div class="skill-progress-fill" data-level="86%" style="background: var(--grad-sunset);"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-tags-cloud">
-            <span class="tech-tag">HTML5/CSS3</span>
-            <span class="tech-tag">Git / CI/CD</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">Chart.js / D3</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       9. CONTACT & INTERACTIVE ESTIMATOR SECTION
-       ========================================================================= -->
-  <section class="section" id="contact" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light);">
-    <div class="container">
-      <div class="section-header reveal-on-scroll">
-        <span class="section-tag">Let's Connect</span>
-        <h2 class="section-title">Start a Project or Consultation</h2>
-        <p class="section-subtitle">Interested in unlocking actionable insights from your data, building a data product, or designing an intuitive app? Let's discuss your roadmap.</p>
-      </div>
-
-      <div class="contact-grid">
-        
-        <!-- Left: Contact Details & Social Links -->
-        <div class="contact-info-panel reveal-on-scroll">
-          <div class="contact-card-box">
-            <div class="contact-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-            <div class="contact-details">
-              <h4>Direct Email</h4>
-              <p><a href="mailto:davidogbogu2005@gmail.com" style="color: var(--text-main); font-weight: 600;">davidogbogu2005@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-card-box">
-            <div class="contact-icon-wrapper" style="color: var(--accent-emerald); background: rgba(16,185,129,0.12);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <div class="contact-details">
-              <h4>Response Time</h4>
-              <p>Within 24 Business Hours</p>
-            </div>
-          </div>
-
-          <div class="contact-card-box">
-            <div class="contact-icon-wrapper" style="color: var(--accent-violet); background: rgba(139,92,246,0.12);">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-            <div class="contact-details">
-              <h4>Location & Availability</h4>
-              <p>Enugu State, Nigeria (Available for Global Remote)</p>
-            </div>
-          </div>
-
-          <div>
-            <h4 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Professional Profiles</h4>
-            <div class="social-links-row">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </a>
-              <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Kaggle Datasets Profile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 8v8M16 8l-5 4 5 4"></path></svg>
-              </a>
-              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Dribbble Design Showcase">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Interactive Project Inquiry Form & Estimator -->
-        <div class="contact-form-container reveal-on-scroll stagger-2">
-          <!-- Estimator Widget -->
-          <div class="estimator-widget">
-            <div class="estimator-title">⚡ Interactive Scope & Timeline Estimator</div>
-            <div class="project-type-pills">
-              <button type="button" class="type-pill-btn active" data-type="data-viz">BI & Dashboarding</button>
-              <button type="button" class="type-pill-btn" data-type="ml-pipeline">ML / Predictive Model</button>
-              <button type="button" class="type-pill-btn" data-type="app-design">UI/UX Design System</button>
-              <button type="button" class="type-pill-btn" data-type="fullstack">Full-Stack Data App</button>
-            </div>
-            <div class="estimate-output-row">
-              <div>
-                <span style="color: var(--text-muted); font-size: 0.8rem;">Est. Investment:</span>
-                <div id="estimated-scope-val" class="estimate-val">$4,500 – $8,500</div>
-              </div>
-              <div style="text-align: right;">
-                <span style="color: var(--text-muted); font-size: 0.8rem;">Typical Timeline:</span>
-                <div id="estimated-time-val" style="font-family: var(--font-heading); font-weight: 700; color: var(--accent-cyan);">2 – 3 Weeks</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Form Element -->
-          <form id="contact-form" novalidate>
-            <!-- Anti-Spam Honeypot (Hidden from human users) -->
-            <div style="display: none;" aria-hidden="true">
-              <label for="form-botcheck">Leave this field blank</label>
-              <input type="text" id="form-botcheck" name="botcheck" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="form-group">
-              <label for="contact-name" class="form-label">Your Name</label>
-              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Sarah Connor" maxlength="100" autocomplete="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-email" class="form-label">Email Address</label>
-              <input type="email" id="contact-email" class="form-input" placeholder="sarah@company.com" maxlength="150" autocomplete="email" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-message" class="form-label">Project Details or Inquiry</label>
-              <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your dataset, project goals, timeline, and deliverables..." maxlength="3000" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <span>Send Project Inquiry</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       10. REFINED PROFESSIONAL FOOTER
-       ========================================================================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="nav-brand">
-            <div class="brand-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-            </div>
-            <span class="brand-text">David<span>Ogbogu</span></span>
-          </div>
-          <p>Senior Data Analyst & Digital Product Designer</p>
-        </div>
-
-        <nav class="footer-nav" aria-label="Footer Navigation">
-          <a href="#hero" class="nav-link">About</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#data-projects" class="nav-link">Data Projects</a>
-          <a href="#app-projects" class="nav-link">App Projects</a>
-          <a href="#design-projects" class="nav-link">Design</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-
-        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top of Page" style="opacity: 0; pointer-events: none;">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Redesigned Minimalist Footer Bottom Strip -->
-      <div class="footer-bottom">
-        <div class="footer-copyright">
-          © 2026 David Ogbogu. All rights reserved.
-        </div>
-
-        <div class="footer-discipline-tags">
-          <span>Data Analytics</span>
-          <span class="footer-bullet">•</span>
-          <span>Machine Learning</span>
-          <span class="footer-bullet">•</span>
-          <span>Product & UI/UX Design</span>
-        </div>
-
-        <div class="footer-status-pill">
-          <span class="status-dot"></span>
-          <span>Enugu State, Nigeria • Open to Remote Worldwide</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- =========================================================================
-       11. CASE STUDY MODAL DIALOG
-       ========================================================================= -->
-  <div id="project-modal-backdrop" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-dialog">
-      <button id="project-modal-close" class="modal-close-btn" aria-label="Close Case Study Details">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <div id="project-modal-content" class="modal-content">
-        <!-- Injected dynamically by projects.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript Scripts -->
-  <script src="assets/js/charts.js"></script>
-  <script src="assets/js/experience.js"></script>
-  <script src="assets/js/projects.js"></script>
+  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
