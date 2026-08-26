@@ -1,7 +1,7 @@
 # Project Architecture: David Ogbogu Portfolio
 
 ## 1. Overview
-High-performance, bespoke portfolio landing page for **David Ogbogu** (Webdesigner & Digital Product Designer). Built with semantic HTML5, Vanilla CSS3 with CSS Custom Properties for full Light/Dark mode inversion, and lightweight Vanilla JavaScript for micro-interactions and animations.
+High-performance, bespoke portfolio landing page for **David Ogbogu** (Webdesigner & Digital Product Designer). Built with semantic HTML5, Vanilla CSS3 with CSS Custom Properties for full Light/Dark mode inversion, a complete **Liquid Glass Design System**, and lightweight Vanilla JavaScript for micro-interactions, spring physics, and dynamic modals. Fully optimized for seamless responsiveness across mobile, tablet, and desktop viewports.
 
 ---
 
@@ -14,17 +14,19 @@ Website-demo-1/
 │       └── always_update_architecture.md
 ├── assets/
 │   ├── css/
-│   │   └── style.css            # Unified CSS design system & dark mode tokens
+│   │   └── style.css            # Unified CSS design system, liquid glass engine, mobile breakpoints & dark mode tokens
 │   ├── js/
-│   │   └── main.js              # Preloader, theme toggle, filters, accordion, hover preview
+│   │   └── main.js              # Preloader, liquid glass physics, theme toggle, project modal, filters, accordion
 │   ├── images/
 │   │   ├── david_hero_blended.png# Feathered portrait cutout with soft gradient blend
 │   │   ├── david_cutout.png     # Transparent portrait cutout
 │   │   ├── david_portrait.jpg   # Original portrait photo
-│   │   ├── project-bloomcare.jpg# Showcase mockup 1 (Mental Health App)
-│   │   ├── project-fragwater.jpg# Showcase mockup 2 (Luxury Fragrance)
-│   │   ├── project-cryptocalm.jpg# Showcase mockup 3 (Crypto Dashboard)
-│   │   ├── project-zenpay.jpg   # Showcase mockup 4 (Fintech Banking App)
+│   │   ├── david_avatar_themed.png# Studio-graded circular themed avatar
+│   │   ├── favicon.png          # High-resolution website favicon
+│   │   ├── project-bloomcare.jpg# Showcase mockup 1 (Luxury Mental Health App)
+│   │   ├── project-fragwater.jpg# Showcase mockup 2 (Luxury Fragrance Landing Page)
+│   │   ├── project-cryptocalm.jpg# Showcase mockup 3 (Luxury Crypto Dashboard & Analytics)
+│   │   ├── project-zenpay.jpg   # Showcase mockup 4 (NextGen Private Wealth Banking)
 │   │   └── service-phones.jpg   # 3 floating mobile app screens
 │   └── screenshots/             # Reference screenshots for layout & styling
 ├── index.html                   # Core semantic landing page
@@ -34,75 +36,69 @@ Website-demo-1/
 
 ---
 
-## 3. Component Architecture & Interactions
+## 3. Component Architecture & Mobile Optimization
 
 ### A. Preloader Module
 - Character-by-character staggered slide-up animation for `David—Ogbogu`.
 - Smooth cubic-bezier opacity & transform mask exit revealing the landing page.
 
-### B. Header & Floating Glassmorphic Island Navigation
-- **Default State:** Sits naturally in the top header card.
-- **Floating Pill State on Scroll (`is-scrolled`):** Transforms seamlessly into a compact, fixed glassmorphic island pill centered at `top: 18px` with `backdrop-filter: blur(20px)`, rounded pill boundaries, and subtle drop shadow.
-- **Scrollspy Active States:** Dynamically detects current viewport section (`#hero`, `#work`, `#services`, `#experience`, `#contact`) and highlights active nav links with an underline accent.
-- **Controls Available Everywhere:** Availability badge, navigation links, animated theme switcher, and `Let's Collaborate` CTA remain accessible without cluttering or obstructing content.
+### B. Header & Symmetrical Liquid Glass Navigation
+- **Desktop Symmetry:** Equal 42px heights, uniform padding, and balanced gaps across the availability badge, navigation pills (`Work`, `Service`, `Experience`, `Contact` without bracketed numbers), theme toggle, and CTA button.
+- **Mobile Header Row (<820px, <640px, <480px):** Single horizontal row layout with compact "Available" badge, resized 3D capsule theme toggle with proportional translation lens, and circular liquid glass hamburger menu button.
+- **Floating Island State on Scroll (`is-scrolled`):** Transforms seamlessly into a compact, fixed glassmorphic island pill centered at `top: 16px` (or `top: 8px` on mobile) with `backdrop-filter: blur(24px) saturate(190%)`, specular rim lighting, and subtle drop shadow.
+- **Scrollspy Active States:** Dynamically detects current viewport section (`#hero`, `#work`, `#services`, `#experience`, `#contact`) and highlights active nav pills.
 
-### C. Hero Section
-- Bold display typography: `DAVID` (outlined stroke style) + `OGBOGU` (solid fill style).
-- Transparent PNG portrait cutout positioned centrally, layered in front of the display typography.
-- Role summary card on left (`Webdesigner`, value proposition, CTA button).
-- Floating social pill links on right (`Dribbble`, `Instagram`, `LinkedIn`, `Behance`).
+### C. Liquid Glass Interface & Physics Engine
+- **Refractive Specular Highlights:** Multi-layered inset and drop shadows (`--liquid-glass-shadow`, `--liquid-glass-shadow-hover`) paired with top-rim frosted highlight curves.
+- **Dynamic Cursor Following:** `mousemove` telemetry updates `--mouse-x` and `--mouse-y` coordinates for real-time specular light lens reflections.
+- **Liquid Spring Squish:** Elastic squash-and-stretch feedback on click (`cubic-bezier(0.34, 1.56, 0.64, 1)`).
 
-### D. Selected Work Section (`/SELECTED WORK`)
-- Subtle `PORTFOLIO` watermark header.
-- Filter buttons (`All`, `Real Project`, `Exploration`) with animated card filtering.
-- Two-column grid of project cards with thumbnail scaling, badges, and hover arrow buttons.
+### D. Redesigned 3D Liquid Glass Theme Switcher
+- Recreated after the reference capsule design:
+  - **Light Mode:** 3D liquid glass spherical lens resting on the left with a radiant Sun icon; "Light" label displayed on the right.
+  - **Dark Mode:** 3D liquid glass spherical lens smoothly translated to the right with a glowing crescent Moon icon; "Dark" label displayed on the left.
+  - Responsive lens travel physics across 114px (desktop), 94px (tablet/mobile), and 88px (small mobile).
 
-### E. Services Section (`/SERVICE`)
-- Interactive accordion system (`UIUX DESIGN`, `WEB DESIGN & DEV`, `BRANDING`, `MOTIONS & ANIMATIONS`).
-- Expanding accordion reveals rich descriptions and phone mockup previews.
+### E. Hero Section (Mobile Optimized)
+- Bold display typography: `DAVID` (outlined stroke style) + `OGBOGU` (solid fill style) with responsive `clamp(34px, 11vw, 142px)`.
+- Portrait cutout centered with responsive dimensions (`260px` - `310px` on mobile) layered between typography and content.
+- Hero content grid stacked cleanly on mobile with centered role summary, full-width CTA button, and 2x2 grid of liquid glass social pills.
 
-### F. Experience Section (`/EXPERIENCE`)
-- Watermark background `EXPERIENCE`.
-- Experience timeline rows (`Kumpin Studio`, `Mikan Team`, `Microsoft`, `Facebook`, `Apple`).
-- Cursor-tracking floating popup preview (`.floating-preview`) displaying company/project mockups on hover.
+### F. Selected Work Section (`/SELECTED WORK`) (Mobile Centered Layout)
+- **Centered Category Tabs:** `All`, `Real Project`, and `Exploration` tabs are center-aligned on mobile with symmetrically equal gaps and balanced padding.
+- **Centered "View All Work" Button:** Positioned directly below the centered tabs with matching horizontal center alignment.
+- **Project Cards:** Single-column on mobile with permanently visible, touch-friendly liquid glass arrow buttons in the bottom-right corner.
+- Luxury FragWater dark theme styling across BloomCare, FragWater, CryptoCalm, and ZenPay.
 
-### G. CTA & Footer Section
-- Prominent `HAVE A PROJECT IN MIND?` callout with collaboration copy.
-- Contact button opening the inquiry modal.
-- Footer social pill bar featuring avatar pill (`David Ogbogu`) + external channels + copyright notice.
+### G. Interactive Subtle Project Details Modal (Mobile Responsive)
+- Touch-friendly bottom-sheet / modal card (`95%` width, `88vh` max height, smooth momentum scrolling).
+- Highlights & metrics adapted to single-column and 3-column compact responsive cards.
+- Stacked touch-friendly action buttons (`46px` height) and accessible close button.
 
-### H. Contact Modal
-- Backdrop-blur overlay modal containing an inquiry form with validation and simulated submission feedback.
+### H. Services & Experience Sections (Mobile Responsive)
+- Accordion header padding optimized for touch targets (min `44px`).
+- Experience rows formatted with responsive stacked metadata and hover preview disabled on touch screens to prevent touch conflicts.
 
----
-
-## 4. Design System & Theme Inversion
-
-| Token Variable | Light Mode | Dark Mode |
-| :--- | :--- | :--- |
-| `--bg-page` | `#e8ebf0` (cloud mesh) | `#07070a` (cosmic dark) |
-| `--bg-container` | `#ffffff` | `#101015` |
-| `--bg-card` | `#ffffff` | `#15151c` |
-| `--text-primary` | `#111114` | `#f4f4f6` |
-| `--text-secondary` | `#52525b` | `#a1a1aa` |
-| `--border-card` | `rgba(0, 0, 0, 0.08)` | `rgba(255, 255, 255, 0.1)` |
-| `--btn-primary-bg` | `#111114` | `#ffffff` |
-| `--btn-primary-text` | `#ffffff` | `#09090b` |
-| `--status-dot` | `#10b981` | `#34d399` |
+### I. CTA & Footer Section (Mobile Responsive)
+- Responsive heading wrapping gracefully across all phone screen widths.
+- Avatar pill centered with 2x2 grid for social channels.
 
 ---
 
-## 5. Version Changelog
+## 4. Version Changelog
 
 | Timestamp | Version | Description |
 | :--- | :--- | :--- |
-| `2026-08-25T11:58:00+01:00` | `v1.0.0` | Initial release of David Ogbogu Portfolio Landing Page: preloader, hero with portrait cutout and stroke typography, selected work grid with category filters, interactive services accordion, experience hover preview, stylish light/dark theme switcher, and contact modal. |
-| `2026-08-25T12:17:00+01:00` | `v1.0.1` | Hero portrait blending refinement: feathered alpha boundaries, anchored bottom alignment with smooth CSS gradient masking, and adjusted headline typography spacing for clear non-disruptive placement. |
-| `2026-08-25T14:43:00+01:00` | `v1.0.2` | Startup screen enhancements: enlarged preloader typography to massive display scale (`clamp(54px, 8.5vw, 115px)`), intensified character entrance zoom-in, and added pronounced `scale(3.5)` motion-blur exit zoom effect. |
-| `2026-08-25T15:52:00+01:00` | `v1.0.3` | Floating Glassmorphic Island Navigation: transformed header into an uncluttered, compact floating pill upon scroll with real-time scrollspy active section tracking. |
-| `2026-08-25T15:58:00+01:00` | `v1.0.4` | Comprehensive Mobile Optimization: added slide-in mobile navigation drawer with hamburger toggle, responsive stacked hero layout with optimized portrait positioning, touch-friendly filter horizontal scrolls, single-column responsive grids, and iOS-safe form inputs. |
-| `2026-08-25T16:15:00+01:00` | `v1.0.5` | Mobile Header Single-Line Alignment: enforced non-wrapping header layout, added responsive `Available` status badge text on mobile viewports, and miniaturized theme toggle/hamburger buttons for perfect horizontal row fit. |
-| `2026-08-25T16:25:00+01:00` | `v1.0.6` | Social Channels Update: replaced Dribbble with GitHub and Behance with WhatsApp with SVG vector icons across Hero, Mobile Drawer, Footer, and Schema metadata (configured with placeholder targets `#`). |
-| `2026-08-25T16:29:00+01:00` | `v1.0.7` | Social Icon Theme Synchronization: added explicit dimensional rules (`15px x 15px`) and `currentColor` inheritance for social vector icons so they seamlessly adapt to the website's light/dark design theme and hover states. |
-| `2026-08-25T16:51:00+01:00` | `v1.0.8` | Hero Portrait Alignment & Theme Grading: straightened posture and head tilt (-4.2° counter-alignment), centered horizontal axis of symmetry at exact midpoint, and applied high-contrast studio monochrome grading to match the website's minimalist design theme. |
-| `2026-08-25T17:00:00+01:00` | `v1.0.9` | CTA Typography Refinement: formatted 'HAVE A PROJECT IN MIND?' to display cleanly on a single line across all viewports with uncluttered letter spacing (`0.03em`) and generous word breathing room (`0.08em`). |
+| `2026-08-25T11:58:00+01:00` | `v1.0.0` | Initial release of David Ogbogu Portfolio Landing Page. |
+| `2026-08-25T12:17:00+01:00` | `v1.0.1` | Hero portrait blending refinement with gradient masking. |
+| `2026-08-25T14:43:00+01:00` | `v1.0.2` | Startup screen enhancements with motion-blur exit. |
+| `2026-08-25T15:52:00+01:00` | `v1.0.3` | Floating Glassmorphic Island Navigation. |
+| `2026-08-25T15:58:00+01:00` | `v1.0.4` | Initial Mobile Navigation Drawer & responsive styling. |
+| `2026-08-25T16:15:00+01:00` | `v1.0.5` | Mobile Header Single-Line Alignment. |
+| `2026-08-25T16:25:00+01:00` | `v1.0.6` | Social Channels vector icon update. |
+| `2026-08-25T16:29:00+01:00` | `v1.0.7` | Social Icon Theme Synchronization. |
+| `2026-08-25T16:51:00+01:00` | `v1.0.8` | Hero Portrait Alignment & Theme Grading. |
+| `2026-08-25T17:00:00+01:00` | `v1.0.9` | CTA Typography Refinement. |
+| `2026-08-26T10:45:00+01:00` | `v2.0.0` | Major Enhancement: Symmetrical Liquid Glass Navigation, Liquid Glass UI Engine, 3D Theme Switcher, Studio Avatar & Favicon, Live Social Links, FragWater Luxury Mockups, and Project Details Modal. |
+| `2026-08-26T10:58:00+01:00` | `v2.0.1` | Comprehensive Mobile Optimization: fine-tuned single-line mobile header row, responsive 3D theme switcher lens translation, stacked hero layout with centered portrait, and responsive modal bottom-sheet adaptations. |
+| `2026-08-26T11:08:00+01:00` | `v2.0.2` | Mobile Category Tabs & CTA Centering: center-aligned `All`, `Real Project`, and `Exploration` filter tabs with symmetrical equal spacing on mobile, and center-aligned the `View All Work` button below them. |
