@@ -21,7 +21,7 @@ A modern, high-performance, and bespoke portfolio website for **David Ogbogu** (
 - **Markup:** HTML5 (Semantic & SEO-optimized, OpenGraph, JSON-LD Schema)
 - **Styling:** Vanilla CSS3 (Custom Properties / Design Tokens, Flexbox, CSS Grid, Glassmorphism)
 - **Scripting:** Vanilla JavaScript (ES6 Modules, LocalStorage Theme Persistence, DOM Animations)
-- **Typography:** Google Fonts (`Outfit`)
+- **Typography:** Google Fonts (`Geist`, `Geist Mono`)
 
 ---
 

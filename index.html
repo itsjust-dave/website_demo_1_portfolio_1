@@ -24,10 +24,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -45,6 +47,20 @@
     ]
   }
   </script>
+
+  <!-- Immediate Theme Initializer (Prevents Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -61,28 +77,23 @@
     </div>
   </div>
 
-  <!-- Floating Preview for Experience section -->
-  <div id="floating-preview" class="floating-preview" aria-hidden="true">
-    <img id="floating-preview-img" src="assets/images/service-phones.jpg" alt="Preview" />
-  </div>
 
   <!-- Site Container -->
   <div class="site-wrapper">
     
     <!-- Top Header & Navigation -->
     <header class="site-header">
-      <div class="status-badge liquid-glass-pill">
+      <a href="https://calendly.com/davidogbogu2005/30-min-discovery-call" target="_blank" rel="noopener noreferrer" class="status-badge liquid-glass-pill" data-open-calendly aria-label="Book a 30-minute discovery call">
         <span class="status-dot"></span>
         <span class="status-text-full">Available for New Project</span>
         <span class="status-text-short">Available</span>
-      </div>
+      </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#work" class="nav-link nav-pill liquid-glass-pill">Work</a></li>
-          <li><a href="#services" class="nav-link nav-pill liquid-glass-pill">Service</a></li>
-          <li><a href="#experience" class="nav-link nav-pill liquid-glass-pill">Experience</a></li>
-          <li><a href="#contact" class="nav-link nav-pill liquid-glass-pill">Contact</a></li>
+          <li><a href="index.html" class="nav-link nav-pill liquid-glass-pill active">Home</a></li>
+          <li><a href="about.html" class="nav-link nav-pill liquid-glass-pill">About</a></li>
+          <li><a href="portfolio.html" class="nav-link nav-pill liquid-glass-pill">Portfolio</a></li>
         </ul>
       </nav>
 
@@ -132,19 +143,23 @@
       <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
       <div class="mobile-drawer-content">
         <div class="mobile-drawer-header">
-          <div class="status-badge liquid-glass-pill">
+          <a href="https://calendly.com/davidogbogu2005/30-min-discovery-call" target="_blank" rel="noopener noreferrer" class="status-badge liquid-glass-pill" data-open-calendly aria-label="Book a 30-minute discovery call">
             <span class="status-dot"></span>
             <span>Available for New Project</span>
-          </div>
+          </a>
           <button id="mobile-drawer-close" class="modal-close-btn" aria-label="Close navigation menu">✕</button>
         </div>
 
         <nav class="mobile-nav">
           <ul class="mobile-nav-list">
-            <li><a href="#work" class="mobile-nav-link nav-pill liquid-glass-pill"><span>Work</span></a></li>
-            <li><a href="#services" class="mobile-nav-link nav-pill liquid-glass-pill"><span>Service</span></a></li>
-            <li><a href="#experience" class="mobile-nav-link nav-pill liquid-glass-pill"><span>Experience</span></a></li>
-            <li><a href="#contact" class="mobile-nav-link nav-pill liquid-glass-pill"><span>Contact</span></a></li>
+            <li><a href="index.html" class="mobile-nav-link nav-pill liquid-glass-pill active"><span>Home</span></a></li>
+            <li><a href="about.html" class="mobile-nav-link nav-pill liquid-glass-pill"><span>About Me</span></a></li>
+            <li><a href="portfolio.html" class="mobile-nav-link nav-pill liquid-glass-pill"><span>Portfolio Gallery</span></a></li>
+            <li style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-subtle);"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); padding-left: 10px;">Sections</span></li>
+            <li><a href="#work" class="mobile-nav-link nav-pill liquid-glass-pill"><span>✦ Work</span></a></li>
+            <li><a href="#services" class="mobile-nav-link nav-pill liquid-glass-pill"><span>❖ Service</span></a></li>
+            <li><a href="#experience" class="mobile-nav-link nav-pill liquid-glass-pill"><span>◈ Experience</span></a></li>
+            <li><a href="#contact" class="mobile-nav-link nav-pill liquid-glass-pill" data-open-contact><span>✉ Contact</span></a></li>
           </ul>
         </nav>
 
@@ -189,18 +204,25 @@
 
       <!-- Center Portrait Cutout -->
       <div class="hero-portrait-container">
-        <img src="assets/images/david_hero_blended.png" alt="David Ogbogu" class="hero-portrait" />
+        <img src="assets/images/david_cutout.png" alt="David Ogbogu" class="hero-portrait" />
       </div>
 
       <!-- Bottom Hero Content Split -->
       <div class="hero-content-grid">
         <div class="hero-left-box">
-          <h2 class="hero-role">Webdesigner</h2>
-          <p class="hero-tagline">Designing Websites that make you want to come back again.</p>
-          <button class="btn btn-primary liquid-glass-pill" data-open-contact>
-            <span>Let's collaborate</span>
-            <span class="btn-arrow">↗</span>
-          </button>
+          <div class="identity-highlight liquid-glass-pill" style="margin-bottom: 8px;">Data • Technology • Design</div>
+          <h2 class="hero-role">Webdesigner & Problem Solver</h2>
+          <p class="hero-tagline">Designing Websites that make you want to come back again. Turning data and technology into intuitive digital experiences.</p>
+          <div class="hero-actions-row">
+            <button class="btn btn-primary liquid-glass-pill" data-open-contact>
+              <span>Let's collaborate</span>
+              <span class="btn-arrow">↗</span>
+            </button>
+            <a href="about.html" class="btn btn-secondary liquid-glass-pill">
+              <span>About Me</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+          </div>
         </div>
 
         <ul class="hero-social-list">
@@ -233,14 +255,75 @@
 
     </section>
 
-    <!-- Selected Work / Portfolio Section -->
-    <section class="section" id="work">
+    <!-- Dedicated Homepage Section Navigation Dock (Exclusive to Home Page) -->
+    <nav class="home-section-nav-wrap" aria-label="Page Sections Navigation">
+      <div class="home-section-dock">
+        <a href="#work" class="section-dock-btn liquid-glass-pill active">
+          <span class="dock-icon">✦</span>
+          <span>Work</span>
+        </a>
+        <a href="#services" class="section-dock-btn liquid-glass-pill">
+          <span class="dock-icon">❖</span>
+          <span>Service</span>
+        </a>
+        <a href="#experience" class="section-dock-btn liquid-glass-pill">
+          <span class="dock-icon">◈</span>
+          <span>Experience</span>
+        </a>
+        <a href="#contact" class="section-dock-btn liquid-glass-pill" data-open-contact>
+          <span class="dock-icon">✉</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- About Me Homepage Teaser Section -->
+    <section class="home-about-teaser" id="about-teaser">
+      <div class="watermark-title" aria-hidden="true" style="top: 5%;">ABOUT</div>
+      <div class="home-about-grid">
+        <div class="home-about-content">
+          <div class="about-eyebrow">A Little About Me</div>
+          <h2 class="home-about-title">I turn ideas, data, and technology into practical digital experiences.</h2>
+          <div class="identity-highlight liquid-glass-pill">Data • Technology • Design</div>
+          <p class="home-about-lead">
+            I'm an Electronics and Computer Engineering student at the <strong>University of Nigeria, Nsukka</strong>, building at the intersection of <strong>Data Analytics, Business Intelligence, Web Development, and UI/UX Design</strong>.
+          </p>
+          <p class="home-about-lead" style="font-size: 14.5px; color: var(--text-secondary);">
+            My journey spans engineering systems, data visualization, digital design, project management, and event technology. I don't just want to understand technology; I use it to build things that make sense and truly solve problems.
+          </p>
+          <div class="home-about-actions">
+            <a href="about.html" class="btn btn-primary liquid-glass-pill">
+              <span>Read Full Story</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#work" class="btn btn-secondary liquid-glass-pill">
+              <span>Explore Selected Work</span>
+              <span class="btn-arrow">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-about-visual">
+          <div class="about-preview-card">
+            <img src="assets/images/david_portrait.jpg" alt="David Ogbogu" class="about-preview-portrait" />
+            <div class="about-preview-meta">
+              <div>
+                <div class="about-preview-name">David Ogbogu</div>
+                <div class="about-preview-sub">Electronics & Computer Engineering @ UNN</div>
+              </div>
+              <a href="about.html" class="btn btn-secondary liquid-glass-pill" style="padding: 6px 14px; font-size: 12px;">Full Bio ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work / Portfolio Section (Infinite Slow Gradual Marquee) -->
+    <section class="section" id="work" style="overflow: hidden;">
       <div class="watermark-title" aria-hidden="true">PORTFOLIO</div>
       
       <div class="section-header-row">
-        <h2 class="section-heading">
-          <span class="section-heading-slash">/</span>SELECTED WORK
-        </h2>
+        <h2 class="section-heading">SELECTED WORK</h2>
 
         <ul class="filter-tabs">
           <li><button class="filter-tab-btn liquid-glass-pill active" data-filter="all">All</button></li>
@@ -248,90 +331,29 @@
           <li><button class="filter-tab-btn liquid-glass-pill" data-filter="exploration">Exploration</button></li>
         </ul>
 
-        <a href="#work" class="btn btn-secondary liquid-glass-pill">
+        <a href="portfolio.html" class="btn btn-secondary liquid-glass-pill" style="white-space: nowrap; flex-shrink: 0;">
           <span>View All Work</span>
           <span class="btn-arrow">↗</span>
         </a>
       </div>
 
-      <div class="projects-grid">
-        <!-- Project 1: BloomCare -->
-        <article class="project-card" data-category="real-project" data-project-id="bloomcare">
-          <div class="project-image-wrap">
-            <span class="project-badge-overlay">Real Project</span>
-            <img src="assets/images/project-bloomcare.jpg" alt="BloomCare - Mental Health App Landing Page" class="project-img" loading="lazy" />
-            <button class="project-hover-arrow liquid-glass-pill" data-open-project="bloomcare" aria-label="Open BloomCare project details">↗</button>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">BloomCare - Mental Health App Landing Page</h3>
-            <div class="project-tags">
-              <span class="tag-pill liquid-glass-pill">Landing Page</span>
-              <span class="tag-pill liquid-glass-pill">Kumpin Studio</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2: FragWater -->
-        <article class="project-card" data-category="real-project" data-project-id="fragwater">
-          <div class="project-image-wrap">
-            <span class="project-badge-overlay">Real Project</span>
-            <img src="assets/images/project-fragwater.jpg" alt="FragWater - Luxury Fragrance Landing Page" class="project-img" loading="lazy" />
-            <button class="project-hover-arrow liquid-glass-pill" data-open-project="fragwater" aria-label="Open FragWater project details">↗</button>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">FragWater - Luxury Fragrance Landing Page</h3>
-            <div class="project-tags">
-              <span class="tag-pill liquid-glass-pill">Landing Page</span>
-              <span class="tag-pill liquid-glass-pill">Kumpin Studio</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3: CryptoCalm -->
-        <article class="project-card" data-category="exploration" data-project-id="cryptocalm">
-          <div class="project-image-wrap">
-            <span class="project-badge-overlay">Exploration</span>
-            <img src="assets/images/project-cryptocalm.jpg" alt="CryptoCalm - Crypto Dashboard & Analytics" class="project-img" loading="lazy" />
-            <button class="project-hover-arrow liquid-glass-pill" data-open-project="cryptocalm" aria-label="Open CryptoCalm project details">↗</button>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">CryptoCalm - Crypto Dashboard & Analytics</h3>
-            <div class="project-tags">
-              <span class="tag-pill liquid-glass-pill">SaaS Platform</span>
-              <span class="tag-pill liquid-glass-pill">Fintech UI</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4: ZenPay -->
-        <article class="project-card" data-category="exploration" data-project-id="zenpay">
-          <div class="project-image-wrap">
-            <span class="project-badge-overlay">Exploration</span>
-            <img src="assets/images/project-zenpay.jpg" alt="ZenPay - NextGen Mobile Banking & App" class="project-img" loading="lazy" />
-            <button class="project-hover-arrow liquid-glass-pill" data-open-project="zenpay" aria-label="Open ZenPay project details">↗</button>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">ZenPay - NextGen Mobile Banking & App</h3>
-            <div class="project-tags">
-              <span class="tag-pill liquid-glass-pill">Mobile Design</span>
-              <span class="tag-pill liquid-glass-pill">Banking UI</span>
-            </div>
-          </div>
-        </article>
+      <!-- Infinite Slow Gradual Marquee (All 10 Projects Live Representation) -->
+      <div class="selected-work-marquee-wrap" id="selected-work-marquee-wrap" aria-label="Selected Projects Carousel">
+        <div class="selected-work-marquee-track" id="selected-work-marquee-track">
+          <!-- Dynamically populated from projects-data.js -->
+        </div>
       </div>
     </section>
 
     <!-- Services Section -->
     <section class="section" id="services">
       <div class="section-header-row">
-        <h2 class="section-heading">
-          <span class="section-heading-slash">/</span>SERVICE
-        </h2>
+        <h2 class="section-heading">SERVICE</h2>
       </div>
 
       <div class="services-container">
-        <!-- Service 1 (Expanded by default) -->
-        <div class="service-item active">
+        <!-- Service 1 -->
+        <div class="service-item">
           <div class="service-header">
             <h3 class="service-title">UIUX DESIGN</h3>
             <span class="service-icon">↗</span>
@@ -409,43 +431,41 @@
       <div class="watermark-title" aria-hidden="true">EXPERIENCE</div>
 
       <div class="section-header-row">
-        <h2 class="section-heading">
-          <span class="section-heading-slash">/</span>EXPERIENCE
-        </h2>
+        <h2 class="section-heading">EXPERIENCE</h2>
         <span class="tag-pill liquid-glass-pill" style="font-weight: 500; font-size: 13px;">9+ years of experience</span>
       </div>
 
       <div class="experience-list">
         <!-- Row 1 -->
-        <div class="experience-row" data-preview="assets/images/service-phones.jpg">
+        <div class="experience-row">
           <span class="exp-company">Kumpin Studio</span>
           <span class="exp-role">UI/UX & Product Designer</span>
           <span class="exp-date">Nov 2025 - Now</span>
         </div>
 
         <!-- Row 2 -->
-        <div class="experience-row" data-preview="assets/images/project-bloomcare.jpg">
+        <div class="experience-row">
           <span class="exp-company">Mikan Team</span>
           <span class="exp-role">Creative Director</span>
           <span class="exp-date">Aug 2025 - Now</span>
         </div>
 
         <!-- Row 3 -->
-        <div class="experience-row" data-preview="assets/images/project-cryptocalm.jpg">
+        <div class="experience-row">
           <span class="exp-company">Microsoft</span>
           <span class="exp-role">Interaction Designer</span>
           <span class="exp-date">Jan 2022 - Aug 2025</span>
         </div>
 
         <!-- Row 4 -->
-        <div class="experience-row" data-preview="assets/images/project-zenpay.jpg">
+        <div class="experience-row">
           <span class="exp-company">Facebook</span>
           <span class="exp-role">Visual Designer</span>
           <span class="exp-date">Mar 2019 - Dec 2021</span>
         </div>
 
         <!-- Row 5 -->
-        <div class="experience-row" data-preview="assets/images/project-fragwater.jpg">
+        <div class="experience-row">
           <span class="exp-company">Apple</span>
           <span class="exp-role">Experience Designer</span>
           <span class="exp-date">Feb 2017 - Feb 2019</span>
@@ -453,57 +473,87 @@
       </div>
     </section>
 
-    <!-- CTA & Footer Section -->
-    <footer class="cta-section" id="contact">
-      <div class="status-badge liquid-glass-pill">
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+      <a href="https://calendly.com/davidogbogu2005/30-min-discovery-call" target="_blank" rel="noopener noreferrer" class="status-badge liquid-glass-pill" data-open-calendly aria-label="Book a 30-minute discovery call">
         <span class="status-dot"></span>
-        <span>Available for New Project</span>
-      </div>
+        <span>Available for New Projects</span>
+      </a>
 
       <h2 class="cta-heading">HAVE A PROJECT IN MIND?</h2>
 
       <p class="cta-subtext">
-        Together, we can create something clear and impactful. Let's collaborate to bring our ideas to life in a way that resonates with everyone.
+        Together, we can create something clear, data-informed, and impactful. Let's collaborate to bring your vision to life.
       </p>
 
       <button class="btn btn-primary liquid-glass-pill" data-open-contact style="padding: 14px 36px; font-size: 16px;">
         <span>Contact Me</span>
         <span class="btn-arrow">↗</span>
       </button>
+    </section>
 
-      <!-- Bottom Social Bar -->
-      <div class="footer-social-bar">
-        <a href="#hero" class="avatar-pill liquid-glass-pill">
-          <img src="assets/images/david_avatar_themed.png" alt="David Ogbogu" class="avatar-pill-img" />
-          <span>David Ogbogu</span>
-        </a>
+    <!-- Standard Multipage Navigation Footer -->
+    <footer class="site-footer-multipage">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo">DAVID OGBOGU</a>
+          <div class="identity-highlight liquid-glass-pill" style="font-size: 11px; padding: 5px 12px;">Data • Technology • Design</div>
+          <p class="footer-brand-tagline">
+            Technology enthusiast, data analyst, and web designer building data-informed digital experiences and practical technology solutions.
+          </p>
+          <div class="footer-status-wrap">
+            <a href="https://calendly.com/davidogbogu2005/30-min-discovery-call" target="_blank" rel="noopener noreferrer" class="status-badge liquid-glass-pill" data-open-calendly aria-label="Book a 30-minute discovery call" style="height: 36px; font-size: 12px;">
+              <span class="status-dot"></span>
+              <span>Available for New Projects</span>
+            </a>
+          </div>
+        </div>
 
-        <div class="footer-social-links">
-          <a href="https://github.com/itsjust-dave" target="_blank" rel="noopener noreferrer" class="social-pill liquid-glass-pill">
-            <svg class="social-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub</span>
-          </a>
+        <!-- Navigation Pages Column -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link active">Home</a></li>
+            <li><a href="about.html" class="footer-nav-link">About Me</a></li>
+            <li><a href="portfolio.html" class="footer-nav-link">Portfolio Gallery</a></li>
+            <li><a href="#contact" class="footer-nav-link" data-open-contact>Contact Me</a></li>
+          </ul>
+        </div>
 
-          <a href="https://www.instagram.com/dc_ogbogu/" target="_blank" rel="noopener noreferrer" class="social-pill liquid-glass-pill">
-            <svg class="social-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            <span>Instagram</span>
-          </a>
+        <!-- Expertise Column -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Expertise</div>
+          <ul class="footer-nav-list">
+            <li><a href="about.html#what-i-do" class="footer-nav-link">Data Analytics & BI</a></li>
+            <li><a href="about.html#what-i-do" class="footer-nav-link">Web Development</a></li>
+            <li><a href="about.html#what-i-do" class="footer-nav-link">UI/UX & Web Design</a></li>
+            <li><a href="about.html#what-i-do" class="footer-nav-link">Project Management</a></li>
+            <li><a href="about.html#what-i-do" class="footer-nav-link">Stage & Cloud Tech</a></li>
+          </ul>
+        </div>
 
-          <a href="https://www.linkedin.com/in/david-ogbogu277/" target="_blank" rel="noopener noreferrer" class="social-pill liquid-glass-pill">
-            <svg class="social-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-
-          <a href="https://wa.me/2348103545916" target="_blank" rel="noopener noreferrer" class="social-pill liquid-glass-pill">
-            <svg class="social-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            <span>WhatsApp</span>
-          </a>
+        <!-- Connect Column -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-nav-list">
+            <li><a href="https://github.com/itsjust-dave" target="_blank" rel="noopener noreferrer" class="footer-nav-link">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/david-ogbogu277/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn ↗</a></li>
+            <li><a href="https://www.instagram.com/dc_ogbogu/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram ↗</a></li>
+            <li><a href="https://wa.me/2348103545916" target="_blank" rel="noopener noreferrer" class="footer-nav-link">WhatsApp ↗</a></li>
+          </ul>
         </div>
       </div>
 
-      <p class="footer-copyright">
-        © 2026 David Ogbogu. All rights reserved.
-      </p>
+      <!-- Bottom Sub-Footer Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-copy">
+          © 2026 David Ogbogu. All rights reserved.
+        </div>
+        <div class="footer-bottom-right">
+          <a href="#hero" class="nav-pill liquid-glass-pill" style="height: 36px; font-size: 12px; padding: 0 16px;">Back to Top ↑</a>
+        </div>
+      </div>
     </footer>
 
   </div>
@@ -569,23 +619,38 @@
         <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
       </div>
 
-      <form id="contact-form">
-        <div class="form-group">
-          <label class="form-label" for="contact-name">Your Name</label>
-          <input class="form-input" type="text" id="contact-name" placeholder="John Doe" required />
+      <form id="contact-form" novalidate>
+        <div class="form-row-2col">
+          <div class="form-group">
+            <label class="form-label" for="contact-first-name">First Name *</label>
+            <input class="form-input" type="text" id="contact-first-name" name="firstName" placeholder="e.g. John" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-last-name">Last Name <span class="optional-tag">(Optional)</span></label>
+            <input class="form-input" type="text" id="contact-last-name" name="lastName" placeholder="e.g. Doe" />
+          </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="contact-email">Your Email</label>
-          <input class="form-input" type="email" id="contact-email" placeholder="john@example.com" required />
+          <label class="form-label" for="contact-email">Your Email *</label>
+          <input class="form-input" type="email" id="contact-email" name="email" placeholder="e.g. john@example.com" required autocomplete="email" />
+          <span class="field-error-text" id="contact-email-error"></span>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="contact-message">Project Details</label>
-          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+          <label class="form-label" for="contact-preferred-channel">Preferred Alternative Contact <span class="optional-tag">(WhatsApp, Phone, Social)</span></label>
+          <input class="form-input" type="text" id="contact-preferred-channel" name="preferredContact" placeholder="e.g. WhatsApp: +234 810 354 5916 or @username" />
         </div>
 
-        <button type="submit" class="btn btn-primary liquid-glass-pill" style="width: 100%; padding: 14px; margin-top: 8px;">
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Project Details *</label>
+          <textarea class="form-textarea" id="contact-message" name="projectDetails" placeholder="Tell me about your project, goals, deliverables, and timeline..." required></textarea>
+        </div>
+
+        <div id="contact-form-status" class="form-status-message" aria-live="polite"></div>
+
+        <button type="submit" id="contact-submit-btn" class="btn btn-primary liquid-glass-pill" style="width: 100%; padding: 14px; margin-top: 8px;">
           <span>Send Message</span>
           <span class="btn-arrow">↗</span>
         </button>
@@ -594,6 +659,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="assets/js/projects-data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

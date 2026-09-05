@@ -9,5 +9,9 @@ desktop.ini
 *.swp
 *.swo
 
+# Dependencies
+node_modules/
+
 # Temporary Logs
 *.log
+
